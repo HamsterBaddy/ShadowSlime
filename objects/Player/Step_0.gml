@@ -5,7 +5,7 @@ spe.z = 0;
 
 if(keyboard_check_pressed(vk_rshift) and canTakeAction)
 {
-	instance_create_depth(0,0,1000000, obj_textbox);
+	create_textbox("test1")
 }
 
 
@@ -51,6 +51,15 @@ if(keyboard_check_pressed(vk_space) and canTakeAction)
 	}
 }
 
+if(keyboard_check(vk_shift))
+{
+	dim.z = 1;	
+}
+else
+{
+	dim.z = sprite_height	
+}
+
 if(canTakeAction)
 {
 	if(!isJumping)
@@ -68,7 +77,7 @@ else
 }
 
 
-var collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall]);
+var collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall], false);
 
 if(collResult != pointer_null)
 {
@@ -76,7 +85,7 @@ if(collResult != pointer_null)
 	{
 		spe.x = 0;
 		
-		collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall]);
+		collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall], false);
 		
 		if(collResult != pointer_null)
 		{
@@ -84,7 +93,7 @@ if(collResult != pointer_null)
 			{
 				spe.y = 0;
 		
-				collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall]);
+				collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall], false);
 				
 				if(collResult != pointer_null)
 				{
@@ -92,7 +101,7 @@ if(collResult != pointer_null)
 					{
 						spe.z = 0;
 		
-						collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall]);
+						collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall], false);
 					}
 				}
 			}
@@ -105,7 +114,7 @@ if(collResult != pointer_null)
 				
 				spe.z = 0;
 		
-				collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall]);
+				collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall], false);
 				
 				if(collResult != pointer_null)
 				{
@@ -113,7 +122,7 @@ if(collResult != pointer_null)
 					{
 						spe.y = 0;
 		
-						collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall]);
+						collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall], false);
 					}
 				}
 			}
@@ -123,7 +132,7 @@ if(collResult != pointer_null)
 	{
 		spe.y = 0;
 		
-		collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall]);
+		collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall], false);
 		
 		if(collResult != pointer_null)
 		{
@@ -131,7 +140,7 @@ if(collResult != pointer_null)
 			{
 				spe.x = 0;
 		
-				collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall]);
+				collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall], false);
 				
 				if(collResult != pointer_null)
 				{
@@ -139,7 +148,7 @@ if(collResult != pointer_null)
 					{
 						spe.z = 0;
 		
-						collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall]);
+						collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall], false);
 					}
 				}
 			}
@@ -152,7 +161,7 @@ if(collResult != pointer_null)
 				
 				spe.z = 0;
 		
-				collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall]);
+				collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall], false);
 				
 				if(collResult != pointer_null)
 				{
@@ -160,7 +169,7 @@ if(collResult != pointer_null)
 					{
 						spe.x = 0;
 		
-						collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall]);
+						collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall], false);
 					}
 				}
 			}
@@ -175,7 +184,7 @@ if(collResult != pointer_null)
 				
 		spe.z = 0;
 		
-		collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall]);
+		collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall], false);
 		
 		if(collResult != pointer_null)
 		{
@@ -183,7 +192,7 @@ if(collResult != pointer_null)
 			{
 				spe.x = 0;
 		
-				collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall]);
+				collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall], false);
 				
 				if(collResult != pointer_null)
 				{
@@ -191,7 +200,7 @@ if(collResult != pointer_null)
 					{
 						spe.y = 0;
 		
-						collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall]);
+						collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall], false);
 					}
 				}
 			}
@@ -199,7 +208,7 @@ if(collResult != pointer_null)
 			{
 				spe.y = 0;
 		
-				collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall]);
+				collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall], false);
 				
 				if(collResult != pointer_null)
 				{
@@ -207,7 +216,7 @@ if(collResult != pointer_null)
 					{
 						spe.x = 0;
 		
-						collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall]);
+						collResult = BoxCollisionWithObjects(self, spe.x, spe.y, spe.z, [Floor,Wall], false);
 					}
 				}
 			}
@@ -216,8 +225,6 @@ if(collResult != pointer_null)
 	
 	if(collResult != pointer_null)
 	{
-		show_debug_message("Wall: {0}", collResult)
-		show_debug_message("Player_SPE WALL: {0}, {1}, {2}",spe.x, spe.y, spe.z)
 		pos.x = collResult[0];
 		pos.y = collResult[1];
 		pos.z = collResult[2];
@@ -238,3 +245,5 @@ if(collResult != pointer_null)
 		spe.z = 0;
 	}
 }
+
+event_inherited();

@@ -13,6 +13,7 @@ enum MOVEABILITIES
 
 
 global.grav = 3.5;
+global.depthSetup = false;
 
 
 pos =
@@ -113,3 +114,32 @@ pos.set = function(_x,_y,_z)
 				
 				return;
 			}
+			
+			
+function getDepthY(object_id)
+{
+	if(object_id.pos.orientation == ORIENTATIONS.UPRIGHT)
+	{
+		return object_id.pos.y + object_id.dim.y;
+	}
+	else if(object_id.pos.orientation == ORIENTATIONS.FLAT)
+	{
+		return object_id.pos.y + object_id.dim.y;
+	}
+	
+	return pointer_null;
+}
+
+function getDepthZ(object_id)
+{
+	if(object_id.pos.orientation == ORIENTATIONS.UPRIGHT)
+	{
+		return object_id.pos.z
+	}
+	else if(object_id.pos.orientation == ORIENTATIONS.FLAT)
+	{
+		return object_id.pos.z - object_id.dim.z;
+	}
+	
+	return pointer_null;
+}

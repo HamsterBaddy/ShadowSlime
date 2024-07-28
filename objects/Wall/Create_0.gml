@@ -8,7 +8,7 @@ dim.y = thickness;
 dim.z = sprite_height;
 
 pos.x = x;
-pos.z = 0;
+pos.z = _z;
 pos.y = (y + sprite_height - dim.y) - pos.z;
 
 

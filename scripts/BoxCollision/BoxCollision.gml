@@ -1,4 +1,4 @@
-function BoxCollision(boxI_pos_sub_one, boxI_pos_main, boxI_pos_sub_two, boxI_speed_sub_one, boxI_speed_main, boxI_speed_sub_two, boxI_dim_sub_one, boxI_dim_main, boxI_dim_sub_two, boxII_pos_sub_one, boxII_pos_main, boxII_pos_sub_two, boxII_dim_sub_one, boxII_dim_main, boxII_dim_sub_two)
+function BoxCollision(boxI_pos_sub_one, boxI_pos_main, boxI_pos_sub_two, boxI_speed_sub_one, boxI_speed_main, boxI_speed_sub_two, boxI_dim_sub_one, boxI_dim_main, boxI_dim_sub_two, boxII_pos_sub_one, boxII_pos_main, boxII_pos_sub_two, boxII_dim_sub_one, boxII_dim_main, boxII_dim_sub_two, infinite)
 {
 	var boxI_collPos_min_main = boxI_pos_main; 
 	var boxI_collPos_max_main = boxI_pos_main + boxI_dim_main; 
@@ -37,7 +37,7 @@ function BoxCollision(boxI_pos_sub_one, boxI_pos_main, boxI_pos_sub_two, boxI_sp
 		var temp_distance_sub_two = scnittPoint_sub_two - boxI_collSqu_max_two;
 		
 		
-		if(lineVar_sub_one >= 0 and lineVar_sub_one < 1)
+		if(lineVar_sub_one >= 0 and (lineVar_sub_one < 1 or infinite))
 		{
 			if(boxI_collPos_min_main + temp_distance_main < boxII_collPos_max_main and boxI_collPos_max_main + temp_distance_main > boxII_collPos_min_main and
 				boxI_collSqu_min_two + temp_distance_sub_two < boxII_collSqu_max_two and boxI_collSqu_max_two + temp_distance_sub_two > boxII_collSqu_min_two)
@@ -63,7 +63,7 @@ function BoxCollision(boxI_pos_sub_one, boxI_pos_main, boxI_pos_sub_two, boxI_sp
 		var temp_distance_sub_two = scnittPoint_sub_two - boxI_collSqu_min_two;
 		
 		
-		if(lineVar_sub_one >= 0 and lineVar_sub_one < 1)
+		if(lineVar_sub_one >= 0 and (lineVar_sub_one < 1 or infinite))
 		{
 			if(boxI_collPos_min_main + temp_distance_main < boxII_collPos_max_main and boxI_collPos_max_main + temp_distance_main > boxII_collPos_min_main and
 				boxI_collSqu_min_two + temp_distance_sub_two < boxII_collSqu_max_two and boxI_collSqu_max_two + temp_distance_sub_two > boxII_collSqu_min_two)
@@ -90,7 +90,7 @@ function BoxCollision(boxI_pos_sub_one, boxI_pos_main, boxI_pos_sub_two, boxI_sp
 		var temp_distance_sub_two = scnittPoint_sub_two - boxI_collSqu_max_two;
 		
 		
-		if(lineVar_main >= 0 and lineVar_main < 1)
+		if(lineVar_main >= 0 and (lineVar_main < 1 or infinite))
 		{
 			if(boxI_collSqu_min_one + temp_distance_sub_one < boxII_collSqu_max_one and boxI_collSqu_max_one + temp_distance_sub_one > boxII_collSqu_min_one and
 				boxI_collSqu_min_two + temp_distance_sub_two < boxII_collSqu_max_two and boxI_collSqu_max_two + temp_distance_sub_two > boxII_collSqu_min_two)
@@ -115,7 +115,7 @@ function BoxCollision(boxI_pos_sub_one, boxI_pos_main, boxI_pos_sub_two, boxI_sp
 		var temp_distance_main = scnittPoint_main - boxI_collPos_min_main;
 		var temp_distance_sub_two = scnittPoint_sub_two - boxI_collSqu_min_two;
 		
-		if(lineVar_main >= 0 and lineVar_main < 1)
+		if(lineVar_main >= 0 and (lineVar_main < 1 or infinite))
 		{
 			if(boxI_collSqu_min_one + temp_distance_sub_one < boxII_collSqu_max_one and boxI_collSqu_max_one + temp_distance_sub_one > boxII_collSqu_min_one and
 				boxI_collSqu_min_two + temp_distance_sub_two < boxII_collSqu_max_two and boxI_collSqu_max_two + temp_distance_sub_two > boxII_collSqu_min_two)
@@ -145,7 +145,7 @@ function BoxCollision(boxI_pos_sub_one, boxI_pos_main, boxI_pos_sub_two, boxI_sp
 
 		//show_debug_message("Coll: {0} + {1} < {2} and {3} + {1} > {4} and    {5} + {6} < {7} and {8} + {6} > {9}", boxI_collSqu_min_one, temp_distance_sub_one, boxII_collSqu_max_one, boxI_collSqu_max_one, boxII_collSqu_min_one, boxI_collPos_min_main, temp_distance_main, boxII_collPos_max_main, boxI_collPos_max_main, boxII_collPos_min_main)
 		
-		if(lineVar_sub_two >= 0 and lineVar_sub_two < 1)
+		if(lineVar_sub_two >= 0 and (lineVar_sub_two < 1 or infinite))
 		{
 			if(boxI_collSqu_min_one + temp_distance_sub_one < boxII_collSqu_max_one and boxI_collSqu_max_one + temp_distance_sub_one > boxII_collSqu_min_one and
 				boxI_collPos_min_main + temp_distance_main < boxII_collPos_max_main and boxI_collPos_max_main + temp_distance_main > boxII_collPos_min_main)
@@ -171,7 +171,7 @@ function BoxCollision(boxI_pos_sub_one, boxI_pos_main, boxI_pos_sub_two, boxI_sp
 		var temp_distance_sub_two = scnittPoint_sub_two - boxI_collSqu_min_two;
 		
 		
-		if(lineVar_sub_two >= 0 and lineVar_sub_two < 1)
+		if(lineVar_sub_two >= 0 and (lineVar_sub_two < 1 or infinite))
 		{
 			if(boxI_collSqu_min_one + temp_distance_sub_one < boxII_collSqu_max_one and boxI_collSqu_max_one + temp_distance_sub_one > boxII_collSqu_min_one and
 				boxI_collPos_min_main + temp_distance_main < boxII_collPos_max_main and boxI_collPos_max_main + temp_distance_main > boxII_collPos_min_main)
@@ -334,7 +334,7 @@ function BoxCollision(boxI_pos_sub_one, boxI_pos_main, boxI_pos_sub_two, boxI_sp
 	}
 }
 
-function BoxCollisionWithObjects(player_id, x_speed, y_speed, z_speed, object_id_array)
+function BoxCollisionWithObjects(player_id, x_speed, y_speed, z_speed, object_id_array, infinite)
 {
 	var result = pointer_null;
 	
@@ -343,12 +343,10 @@ function BoxCollisionWithObjects(player_id, x_speed, y_speed, z_speed, object_id
 		with(object_id_array[i])
 		{
 			var temp_result = BoxCollision(player_id.pos.x, player_id.pos.y, player_id.pos.z, x_speed, y_speed, z_speed, player_id.dim.x, player_id.dim.y, player_id.dim.z,
-										self.pos.x, self.pos.y, self.pos.z, self.dim.x, self.dim.y, self.dim.z);
+										self.pos.x, self.pos.y, self.pos.z, self.dim.x, self.dim.y, self.dim.z, infinite);
 		
 			if(temp_result != pointer_null)
 			{
-				show_debug_message("temp: {0}, current: {1}", temp_result, result)
-				
 				if(result == pointer_null)
 				{
 					result = array_concat(temp_result,[object_id_array[i]]);

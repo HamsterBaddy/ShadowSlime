@@ -10,7 +10,9 @@
   ],
   "managed":true,
   "name":"Player",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"CollisionObject","path":"objects/CollisionObject/CollisionObject.yy",},"propertyId":{"name":"depthPriority","path":"objects/CollisionObject/CollisionObject.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"2",},
+  ],
   "parent":{
     "name":"Objects",
     "path":"folders/Objects.yy",
