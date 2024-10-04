@@ -1,3 +1,5 @@
+global.defaultLetterColor = make_color_rgb(0xe4, 0xb7, 0xf7)
+
 function scr_set_defaults_for_text()
 {
 	line_break_pos[0, page_number] = -1;
@@ -6,10 +8,10 @@ function scr_set_defaults_for_text()
 	
 	for(var c = 0; c < 500; c++)
 	{
-		col_1[c, page_number] = c_white;
-		col_2[c, page_number] = c_white;
-		col_3[c, page_number] = c_white;
-		col_4[c, page_number] = c_white;	
+		col_1[c, page_number] = global.defaultLetterColor;
+		col_2[c, page_number] = global.defaultLetterColor;
+		col_3[c, page_number] = global.defaultLetterColor;
+		col_4[c, page_number] = global.defaultLetterColor;	
 		
 		float_text[c, page_number] = 0;
 		float_dir[c, page_number] = c*20;

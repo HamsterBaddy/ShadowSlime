@@ -5,7 +5,7 @@ if(!global.depthSetup)
 	var objects	= ds_list_create();
 	with(CollisionObject)
 	{
-		//show_debug_message("Begin List: {0}", self.id)
+		show_debug_message("Begin List: {0}", self.id)
 		
 		if(ds_list_size(objects) < 1)
 		{
@@ -23,26 +23,31 @@ if(!global.depthSetup)
 				{
 					if(object.pos.orientation == ORIENTATIONS.UPRIGHT)
 					{
-						if(self.pos.z - self.dim.z < object.pos.z and self.pos.z > object.pos.z - object.dim.z)
+						if(self.pos.z - self.dim.z <= object.pos.z and self.pos.z >= object.pos.z - object.dim.z)
 						{
 							if(self.pos.y + self.dim.y < object.pos.y + object.dim.y)
 							{
+								show_debug_message("{4}, {5}: {0} + {1} < {2} + {3}", self.pos.y, self.dim.y, object.pos.y, object.dim.y, self.id, object)
 								ds_list_insert(objects, i, self.id);
 								inserted = true;
 								break;
 							}
 							else if(self.pos.y + self.dim.y == object.pos.y + object.dim.y)
 							{
+								show_debug_message("{4}, {5}: {0} + {1} == {2} + {3}", self.pos.y, self.dim.y, object.pos.y, object.dim.y, self.id, object)
 								if(self.depthPriority <= object.depthPriority)
 								{
+									show_debug_message("{0} <= {1}", self.depthPriority, object.depthPriority)
 									ds_list_insert(objects, i, self.id);
 									inserted = true;
 									break;
 								}
 							}
 						}
-						else if(self.pos.z - self.dim.z >= object.pos.z)
+						else if(self.pos.z - self.dim.z > object.pos.z)
 						{
+							show_debug_message("{4}, {5}: {0} - {1} < {2} and {0} > {2} - {3}", self.pos.z, self.dim.z, object.pos.z, object.dim.z, self.id, object)
+							show_debug_message("{3}, {4}: {0} - {1} >= {2}", self.pos.z, self.dim.z, object.pos.z, self.id, object)
 							ds_list_insert(objects, i, self.id);
 							inserted = true;
 							break;
@@ -130,7 +135,7 @@ if(!global.depthSetup)
 	
 	for(var o = 0; o < ds_list_size(objects); o++)
 	{
-		//show_debug_message("End List: {0}", ds_list_find_value(objects, o))
+		show_debug_message("End List: {0}", ds_list_find_value(objects, o))
 		ds_list_find_value(objects, o).depth = -o;
 	}
 }

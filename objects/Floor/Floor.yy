@@ -38,8 +38,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_testFloor",
-    "path":"sprites/spr_testFloor/spr_testFloor.yy",
+    "name":"spr_Ground",
+    "path":"sprites/spr_Ground/spr_Ground.yy",
   },
   "spriteMaskId":null,
   "visible":true,

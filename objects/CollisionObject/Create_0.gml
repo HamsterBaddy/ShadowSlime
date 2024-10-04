@@ -64,6 +64,12 @@ pos.update = function()
 						
 					self.x = pos.x;
 					self.y = pos.y + (pos.z - dim.z);
+					
+					if(self.object_index == FloorWorldEdge)
+					{
+						self.x = pos.x;
+						self.y = pos.y;
+					}
 				}
 				else if(pos.orientation == ORIENTATIONS.UPRIGHT)
 				{

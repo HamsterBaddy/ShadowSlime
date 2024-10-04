@@ -22,13 +22,13 @@ if(setup == false)
 		text_length[p] = string_length(text[p]);
 		
 		
-		text_x_offset[p] = 80;
-		portait_x_offset[p] = 0;
+		text_x_offset[p] = 60 + 4 * 2;
+		portait_x_offset[p] = 4;
 		
 		if(speaker_side[p] == -1)
 		{
-			text_x_offset[p] = 8;
-			portait_x_offset[p] = 216;
+			text_x_offset[p] = (256 - textbox_width - textbox_height) / 3;
+			portait_x_offset[p] = 256 - textbox_height - 4;
 		}
 		
 		if(speaker_sprite[p] == noone)
@@ -180,8 +180,8 @@ if(speaker_sprite[page] != noone)
 		_speaker_x += sprite_width;
 	}
 	
-	draw_sprite_ext(txtb_spr[page], txtb_img, textbox_x + portait_x_offset[page], textbox_y, sprite_width/txtb_spr_w, sprite_height/txtb_spr_h, 0, c_white, 1);
-	draw_sprite_ext(sprite_index, image_index, _speaker_x, textbox_y, speaker_side[page], 1, 0, c_white, 1);
+	draw_sprite_ext(txtb_spr[page], txtb_img, textbox_x + portait_x_offset[page], textbox_y, textbox_height/txtb_spr_w, textbox_height/txtb_spr_h, 0, c_white, 1);
+	draw_sprite_ext(sprite_index, image_index, _speaker_x, textbox_y, speaker_side[page] * 0.9375, 1 * 0.9375, 0, c_white, 1);
 }
 
 draw_sprite_ext(txtb_spr[page], txtb_img, _txtb_x, _txtb_y, textbox_width/txtb_spr_w, textbox_height/txtb_spr_h, 0, c_white, 1);

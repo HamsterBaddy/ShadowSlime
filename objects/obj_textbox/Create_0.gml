@@ -7,7 +7,7 @@ depth = -100000
 
 
 
-textbox_width = 256 - 32*2;
+textbox_width = 256 - 8*9;
 textbox_height = 8*2 + 12*4 - 4;
 margin = 8;
 line_sep = 12;
